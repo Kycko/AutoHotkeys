@@ -2,7 +2,7 @@
 
   lowerText()    {
     Send('^c{Delete}')
-    ClipWait
+    Sleep(50)
     str := StrLower(A_Clipboard)
     Send(str)
 }
@@ -36,6 +36,7 @@ pasteBuffer()    {
 
 #HotIf WinActive('ahk_exe msedge.exe')
    ^D::                         ; отключаем добавление в избранное
+   ^R::                         ; отключаем такой хоткей обновления
    ^S::return                   ; отключаем сохранение
 SC130::Send('{WheelDown 5}')    ; прокрутка вниз
 SC12E::Send('{WheelUp   5}')    ; прокрутка вверх
