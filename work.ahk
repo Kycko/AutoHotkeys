@@ -26,6 +26,13 @@ pasteBuffer()    {
     Send  (key)
     Sleep (200)
 }
+ save_toCSV()    {
+    Send('{Tab}')
+    Sleep(50)
+    Send('c')
+    Sleep(50)
+    Send('{Enter}')
+ }
 
        ^#q::return            ; отключить запуск быстрой помощи Windows
   CapsLock::Send('#{Space}')  ; переключить язык ввода
@@ -41,9 +48,11 @@ pasteBuffer()    {
 SC130::Send('{WheelDown 5}')    ; прокрутка вниз
 SC12E::Send('{WheelUp   5}')    ; прокрутка вверх
 
-#HotIf WinActive('ahk_exe excel.exe')
+#HotIf  WinActive('ahk_exe excel.exe')
+   F8:: lowerText() ; преобразовать выделенный текст в строчные буквы
+Pause::save_toCSV() ; выбрть .csv и сохранить
+
 ;F7::FIO_toIP(true)  ; -> Фамилия И.О.
-F8::lowerText()     ; преобразовать выделенный текст в строчные буквы
 ;F9::addCity(true)   ; добавить город
 
 #HotIf WinActive('ahk_exe msedge.exe') or WinActive('ahk_exe excel.exe')
