@@ -62,3 +62,7 @@ Pause::save_toCSV() ; выбрть .csv и сохранить
     F1::return  ; отключаем справку
     F8::lowerText()
     ;F9::addCity()
+
+#HotIf WinActive('ahk_exe code.exe')
+^SC130::KnobScroll('^{PgDn}')
+^SC12E::KnobScroll('^{PgUp}')

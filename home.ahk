@@ -59,3 +59,7 @@ SC12E::Send('^!{Volume_Down}')
 
 #HotIf WinActive('ahk_exe onenote.exe') ; клавиши только для One Note
 !Numpad5::Send ':'
+
+#HotIf WinActive('ahk_exe code.exe')
+^SC130::KnobScroll('^{PgDn}')
+^SC12E::KnobScroll('^{PgUp}')
