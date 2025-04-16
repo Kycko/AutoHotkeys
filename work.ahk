@@ -49,8 +49,9 @@ SC130::Send('{WheelDown 5}')    ; прокрутка вниз
 SC12E::Send('{WheelUp   5}')    ; прокрутка вверх
 
 #HotIf  WinActive('ahk_exe excel.exe')
-   F8:: lowerText() ; преобразовать выделенный текст в строчные буквы
-Pause::save_toCSV() ; выбрть .csv и сохранить
+   F5::Send('!{F4}')
+   F8::  lowerText() ; преобразовать выделенный текст в строчные буквы
+Pause:: save_toCSV() ; выбрть .csv и сохранить
 
 ;F7::FIO_toIP(true)  ; -> Фамилия И.О.
 ;F9::addCity(true)   ; добавить город
