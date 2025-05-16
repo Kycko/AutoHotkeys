@@ -50,7 +50,10 @@ KnobScroll(key) {
 SC130::Send('^!{Volume_Up}')
 SC12E::Send('^!{Volume_Down}')
 
-; TLD_APP = ahkpy.windows.active_window_context('TheLongDark', match='contains')          # клавиши только для The Long Dark
+#HotIf WinActive('ahk_exe precinct.exe')
+CapsLock::Send('{CapsLock}')
+
+   ; TLD_APP = ahkpy.windows.active_window_context('TheLongDark', match='contains')          # клавиши только для The Long Dark
 ; TLD_APP.hotkey('^v', TLD_paste_coords)
 
 ; VSCode = ahkpy.windows.active_window_context('Visual Studio Code', match='contains')    # только для VS Code
