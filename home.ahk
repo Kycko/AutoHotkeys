@@ -63,3 +63,6 @@ SC12E::Send('^!{Volume_Down}')
 #HotIf WinActive('ahk_exe code.exe')
 ^SC130::KnobScroll('^{PgDn}')
 ^SC12E::KnobScroll('^{PgUp}')
+
+#HotIf WinActive('ahk_exe upnote.exe')
+F2::Send('^+w')
